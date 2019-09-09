@@ -22,4 +22,4 @@ TARGET_2ND_ARCH := x86
 TARGET_2ND_ARCH_VARIANT := x86_64
 TARGET_2ND_CPU_ABI := x86
 
-include device/generic/common/mgsi/BoardConfigGsiCommon.mk
+include device/generic/common/mgsi/BoardConfigMgsiCommon.mk
