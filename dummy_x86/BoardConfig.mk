@@ -18,4 +18,4 @@ TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := x86
 TARGET_CPU_ABI := x86
 
-include device/generic/common/mgsi/BoardConfigGsiCommon.mk
+include device/generic/common/mgsi/BoardConfigMgsiCommon.mk
