@@ -53,8 +53,8 @@ PRODUCT_COPY_FILES += \
     device/generic/common/mgsi/skip_mount.cfg:system/etc/init/config/skip_mount.cfg \
     device/generic/common/mgsi/init.mgsi.rc:system/etc/init/init.mgsi.rc \
 
-# Support additonal P VNDK packages
-PRODUCT_EXTRA_VNDK_VERSIONS := 28
+# Support additional P and Q VNDK packages
+PRODUCT_EXTRA_VNDK_VERSIONS := 28 29
 
 # The 64 bits MGSI build targets inhiert core_64_bit.mk to enable 64 bits and
 # include the init.zygote64_32.rc.
