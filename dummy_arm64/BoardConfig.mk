@@ -27,3 +27,15 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 
 include device/generic/common/mgsi/BoardConfigMgsiCommon.mk
+
+# Emulator system image is going to be used as GSI and some vendor still hasn't
+# cleaned up all device specific directories under root!
+
+# TODO(b/111434759, b/111287060) SoC specific hacks
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/lib/dsp:/dsp
+BOARD_ROOT_EXTRA_SYMLINKS += /mnt/vendor/persist:/persist
+BOARD_ROOT_EXTRA_SYMLINKS += /vendor/firmware_mnt:/firmware
+
+# TODO(b/36764215): remove this setting when the generic system image
+# no longer has QCOM-specific directories under /.
+BOARD_SEPOLICY_DIRS += build/make/target/board/generic_arm64/sepolicy
