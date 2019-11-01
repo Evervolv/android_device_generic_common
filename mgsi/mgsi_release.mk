@@ -50,18 +50,3 @@ PRODUCT_PACKAGES += \
 
 # Support additional P and Q VNDK packages
 PRODUCT_EXTRA_VNDK_VERSIONS := 28 29
-
-# The 64 bits MGSI build targets inhiert core_64_bit.mk to enable 64 bits and
-# include the init.zygote64_32.rc.
-# 64 bits MGSI needs to include different zygote settings for vendor.img to
-# select its preference by setting ro.zygote to zygote64_32 or zygote32_64:
-#   1. 64-bit primary, 32-bit secondary, or
-#   2. 32-bit primary, 64-bit secondary
-# Here includes the init.zygote32_64.rc if it had inhierted core_64_bit.mk.
-ifeq (true|true,$(TARGET_SUPPORTS_32_BIT_APPS)|$(TARGET_SUPPORTS_64_BIT_APPS))
-PRODUCT_COPY_FILES += \
-    system/core/rootdir/init.zygote32_64.rc:root/init.zygote32_64.rc
-
-PRODUCT_ARTIFACT_PATH_REQUIREMENT_WHITELIST += \
-    root/init.zygote32_64.rc
-endif
