@@ -14,8 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 #
 # All components inherited here go to system image
 #
@@ -41,6 +39,9 @@ PRODUCT_COPY_FILES += device/generic/common/nfc/libnfc-nci.conf:$(TARGET_COPY_OU
 # so this product can be tested isolated from those partitions.
 #
 $(call inherit-product, device/generic/common/mgsi/mgsi_release.mk)
+
+# Don't build super.img.
+PRODUCT_BUILD_SUPER_PARTITION := false
 
 
 PRODUCT_NAME := csi_x86
