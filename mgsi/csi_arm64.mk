@@ -44,6 +44,10 @@ $(call inherit-product, device/generic/common/mgsi/mgsi_release.mk)
 # Don't build super.img.
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+# Instruct AM to enable framework's fallback home activity
+PRODUCT_SYSTEM_EXT_PROPERTIES += ro.system_user_home_needed=true
+# Add RRO needed by CSI
+PRODUCT_PACKAGE_OVERLAYS := device/generic/common/mgsi/overlay
 
 PRODUCT_NAME := csi_arm64
 PRODUCT_DEVICE := dummy_arm64
