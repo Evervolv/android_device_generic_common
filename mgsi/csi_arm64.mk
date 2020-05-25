@@ -49,6 +49,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += ro.system_user_home_needed=true
 # Add RRO needed by CSI
 PRODUCT_PACKAGE_OVERLAYS := device/generic/common/mgsi/overlay
 
+PRODUCT_SOONG_NAMESPACES += device/generic/goldfish
+
 PRODUCT_NAME := csi_arm64
 PRODUCT_DEVICE := dummy_arm64
 PRODUCT_BRAND := Android
