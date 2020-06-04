@@ -35,6 +35,7 @@ $(call inherit-product, device/generic/common/mgsi/mgsi_release.mk)
 # Don't build super.img.
 PRODUCT_BUILD_SUPER_PARTITION := false
 
+PRODUCT_SOONG_NAMESPACES += device/generic/goldfish
 
 PRODUCT_NAME := mgsi_arm
 PRODUCT_DEVICE := dummy_arm
