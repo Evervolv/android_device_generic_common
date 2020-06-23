@@ -32,8 +32,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
 #
 # All components below go to product image
 #
-# NFC: Provide a libnfc-nci.conf to CSI (to avoid nfc related exceptions)
-PRODUCT_COPY_FILES += device/generic/common/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
 
 #
 # Special settings to skip mount product and system_ext on the device,
