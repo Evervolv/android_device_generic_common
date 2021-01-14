@@ -15,8 +15,10 @@
 #
 
 PRODUCT_MAKEFILES := \
+	device/generic/common/mgsi/csi_arm.mk \
 	device/generic/common/mgsi/csi_arm64.mk \
 	device/generic/common/mgsi/csi_x86.mk \
+	device/generic/common/mgsi/csi_x86_64.mk \
 	device/generic/common/mgsi/mgsi_arm.mk \
 	device/generic/common/mgsi/mgsi_arm64.mk \
 	device/generic/common/mgsi/mgsi_x86.mk \
