@@ -14,6 +14,13 @@
 # limitations under the License.
 #
 
+# The system image of gsi_arm64-userdebug is the GSI for devices with:
+# - ARM 64-bit userspace
+# - 64-bit binder interface
+# - system-as-root
+# - VNDK enforcement
+# - compatible property override enabled
+
 #
 # All components inherited here go to system image
 #
@@ -21,7 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_system.mk)
 
 # Enable mainline checking
-PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := relaxed
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := true
 
 #
 # All components inherited here go to system_ext image
@@ -35,12 +42,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_product.mk)
 
 #
+# All components inherited here go to boot image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
+
+#
 # Special settings for GSI releasing
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 
 
 PRODUCT_NAME := gsi_arm64
-PRODUCT_DEVICE := gsi_arm64
-PRODUCT_BRAND := generic
+PRODUCT_DEVICE := generic_arm64
+PRODUCT_BRAND := Android
 PRODUCT_MODEL := GSI on ARM64
