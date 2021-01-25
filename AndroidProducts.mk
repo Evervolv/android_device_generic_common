@@ -15,6 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/gsi_arm.mk \
     $(LOCAL_DIR)/gsi_arm64.mk \
     $(LOCAL_DIR)/gsi_x86.mk \
     $(LOCAL_DIR)/gsi_x86_64.mk \
