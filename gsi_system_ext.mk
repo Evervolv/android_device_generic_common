@@ -1,5 +1,5 @@
 #
-# Copyright 2019 The Android Open-Source Project
+# Copyright (C) 2021 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,18 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-	device/generic/common/mgsi/csi_arm64.mk \
-	device/generic/common/mgsi/csi_x86.mk \
-	device/generic/common/mgsi/mgsi_arm.mk \
-	device/generic/common/mgsi/mgsi_arm64.mk \
-	device/generic/common/mgsi/mgsi_x86.mk \
-	device/generic/common/mgsi/mgsi_x86_64.mk \
+# This makefile contains the system_ext partition contents for CTS on
+# GSI compliance testing. Only add something here for this purpose.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
+
+#  handheld packages
+PRODUCT_PACKAGES += \
+    Launcher3QuickStep \
+    Provision \
+    Settings \
+    StorageManager \
+    SystemUI
+
+#  telephony packages
+PRODUCT_PACKAGES += \
+    CarrierConfig
