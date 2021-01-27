@@ -44,4 +44,4 @@ PRODUCT_SOONG_NAMESPACES += device/generic/goldfish
 PRODUCT_NAME := gsi_x86
 PRODUCT_DEVICE := generic_x86
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := x86 GSI
+PRODUCT_MODEL := GSI on x86
