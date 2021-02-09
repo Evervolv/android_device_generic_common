@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     Browser2 \
     Camera2 \
     Dialer \
+    LatinIME \
     messaging \
 
 # Default AOSP sounds
