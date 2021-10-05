@@ -37,6 +37,11 @@ $(call inherit-product, device/generic/common/gsi_product.mk)
 # All components inherited here go to boot image
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86_64/device.mk)
+ifeq ($(TARGET_PRODUCT),gsi_x86_64)
+  # GKI devices should use vendor_boot-debug.img from device build instead.
+  PRODUCT_BUILD_DEBUG_BOOT_IMAGE := false
+  PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
+endif
 
 #
 # Special settings to skip mount product and system_ext on the device,
