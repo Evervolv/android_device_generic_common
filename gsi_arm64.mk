@@ -44,11 +44,6 @@ $(call inherit-product, device/generic/common/gsi_product.mk)
 # All components inherited here go to boot image
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
-ifeq ($(TARGET_PRODUCT),gsi_arm64)
-  # GKI devices should use vendor_boot-debug.img from device build instead.
-  PRODUCT_BUILD_DEBUG_BOOT_IMAGE := false
-  PRODUCT_BUILD_DEBUG_VENDOR_BOOT_IMAGE := false
-endif
 
 #
 # Special settings for GSI releasing
