@@ -50,6 +50,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_arm64/device.mk)
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 
+# Needed to build mk_combined_img used for creating mixed GSI/emu image
+PRODUCT_SOONG_NAMESPACES += device/generic/goldfish
 
 PRODUCT_NAME := gsi_arm64
 PRODUCT_DEVICE := generic_arm64
