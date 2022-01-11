@@ -48,10 +48,6 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 # TODO(b/212486689) Need to confirm the size
 BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 8388608
 
-# Copy boot image in $OUT to target files. This is defined for targets where
-# the installed GKI APEXes are built from source.
-BOARD_COPY_BOOT_IMAGE_TO_TARGET_FILES := true
-
 # No system image
 BOARD_SYSTEMIMAGE_PARTITION_SIZE :=
 
