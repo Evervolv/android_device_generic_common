@@ -26,6 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
 include device/generic/common/gki_common.mk
 $(call output-kernel,kernel/prebuilts/4.19/arm64,kernel/4.19)
 $(call output-kernel,kernel/prebuilts/5.10/arm64,kernel/5.10)
+$(call output-kernel,kernel/prebuilts/5.15/arm64,kernel/5.15)
 
 
 PRODUCT_NAME := gki_arm64
