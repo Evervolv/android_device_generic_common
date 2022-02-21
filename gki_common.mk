@@ -88,8 +88,8 @@ endef
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 PRODUCT_BUILD_BOOT_IMAGE := true
-PRODUCT_BUILD_INIT_BOOT_IMAGE := true
 
+PRODUCT_BUILD_INIT_BOOT_IMAGE := false
 PRODUCT_BUILD_CACHE_IMAGE := false
 PRODUCT_BUILD_ODM_IMAGE := false
 PRODUCT_BUILD_VENDOR_DLKM_IMAGE := false
