@@ -84,7 +84,7 @@ $(call _output_kernel_files,$(_output-kernel-info-files),$(1),$(2))
 endef
 
 #
-# Output boot.img and init-boot.img
+# Output boot.img
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 PRODUCT_BUILD_BOOT_IMAGE := true

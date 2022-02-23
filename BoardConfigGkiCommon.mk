@@ -34,12 +34,15 @@ BOARD_AVB_INIT_BOOT_ROLLBACK_INDEX_LOCATION := 3
 # Sets boot SPL.
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
-# Boot image with ramdisk and kernel
+# Boot image with kernel only (no ramdisk)
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_USES_RECOVERY_AS_BOOT :=
 TARGET_NO_KERNEL := false
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+
+# Pretend as a no-ramdisk device to exclude the ramdisk from the GKI boot image
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 # No system image
 BOARD_SYSTEMIMAGE_PARTITION_SIZE :=
