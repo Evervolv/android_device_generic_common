@@ -34,5 +34,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.notification_sound?=pixiedust.ogg \
     ro.com.android.dataroaming?=true \
 
+ifeq ($(wildcard $(SRC_EVERVOLV_DIR)/prebuilt/common/etc/apns-conf.xml),)
+
 PRODUCT_COPY_FILES += \
     device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+
+endif
