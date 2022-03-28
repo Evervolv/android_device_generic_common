@@ -42,7 +42,7 @@ TARGET_NO_KERNEL := false
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 # Pretend as a no-ramdisk device to exclude the ramdisk from the GKI boot image
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE ?= true
 
 # No system image
 BOARD_SYSTEMIMAGE_PARTITION_SIZE :=
