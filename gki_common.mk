@@ -37,7 +37,6 @@ endef
 # Output the release kernel prebuilt files to dist folder
 #
 # $(1): the source folder contains the kernel prebuilt files
-# $(2): the dist folder
 #
 # Notes:
 #   For mainline kernel, it outputs -allsyms kernel as release kernel.
@@ -55,7 +54,6 @@ endef
 # Output the debug kernel prebuilt files to dist folder
 #
 # $(1): the source folder contains the kernel prebuilt files
-# $(2): the dist folder
 #
 # Note:
 #   For mainline kernel, it outputs -allsyms kernel as release kernel,
@@ -77,10 +75,11 @@ endef
 #  $(call output-kernel,kernel/prebuilts/5.10/arm64,kernel/5.10)
 #
 define output-kernel
-$(call _output-kernel-user,$(1),$(2))
-$(if $(filter userdebug eng,$(TARGET_BUILD_VARIANT)), \
-  $(call _output-kernel-debug,$(1),$(2)))
+$(call _output-kernel-user,$(1))
 $(call _output_kernel_files,$(_output-kernel-info-files),$(1),$(2))
+$(if $(filter userdebug eng,$(TARGET_BUILD_VARIANT)), \
+  $(call _output-kernel-debug,$(1)) \
+  $(call _output_kernel_files,$(_output-kernel-info-files),$(1),$(2)-debug))
 endef
 
 #
