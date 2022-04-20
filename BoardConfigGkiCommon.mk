@@ -40,9 +40,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_USES_RECOVERY_AS_BOOT :=
 TARGET_NO_KERNEL := false
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-
-# Pretend as a no-ramdisk device to exclude the ramdisk from the GKI boot image
-BOARD_BUILD_SYSTEM_ROOT_IMAGE ?= true
+BOARD_BUILD_GKI_BOOT_IMAGE_WITHOUT_RAMDISK ?= true
 
 # No system image
 BOARD_SYSTEMIMAGE_PARTITION_SIZE :=
