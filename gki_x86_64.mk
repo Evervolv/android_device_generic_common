@@ -24,8 +24,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
 # Build GKI boot images
 #
 include device/generic/common/gki_common.mk
-$(call output-kernel,kernel/prebuilts/5.10/x86_64,kernel/5.10)
-$(call output-kernel,kernel/prebuilts/5.15/x86_64,kernel/5.15)
+
+PRODUCT_COPY_FILES += \
+    kernel/prebuilts/5.10/x86_64/kernel-5.10:kernel-5.10 \
+    kernel/prebuilts/5.15/x86_64/kernel-5.15:kernel-5.15 \
+
+$(call dist-for-goals,dist_files,kernel/prebuilts/5.10/x86_64/prebuilt-info.txt:kernel/5.10/prebuilt-info.txt)
+$(call dist-for-goals,dist_files,kernel/prebuilts/5.15/x86_64/prebuilt-info.txt:kernel/5.15/prebuilt-info.txt)
+
+ifneq (,$(filter userdebug eng,$(TARGET_BUILD_VARIANT)))
+
+PRODUCT_COPY_FILES += \
+    kernel/prebuilts/5.10/x86_64/kernel-5.10-allsyms:kernel-5.10-allsyms \
+    kernel/prebuilts/5.15/x86_64/kernel-5.15-allsyms:kernel-5.15-allsyms \
+
+$(call dist-for-goals,dist_files,kernel/prebuilts/5.10/x86_64/prebuilt-info.txt:kernel/5.10-debug/prebuilt-info.txt)
+$(call dist-for-goals,dist_files,kernel/prebuilts/5.15/x86_64/prebuilt-info.txt:kernel/5.15-debug/prebuilt-info.txt)
+
+endif
 
 
 PRODUCT_NAME := gki_x86_64
