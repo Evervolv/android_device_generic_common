@@ -22,6 +22,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
 PRODUCT_PACKAGES += \
     Launcher3QuickStep \
     Provision \
+    RemoteProvisioner \
     Settings \
     StorageManager \
     SystemUI
