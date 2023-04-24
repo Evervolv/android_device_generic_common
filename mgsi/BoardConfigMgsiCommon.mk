@@ -22,6 +22,9 @@ BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 67108864
 # MGSI forces product and system_ext packages to /system for now.
 TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
+# BOARD_X_FILE_SYSTEM_TYPE must be empty if TARGET_COPY_OUT_X is 'system/xyz'.
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE :=
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE :=
 
 # Creates metadata partition mount point under root for
 # the devices with metadata parition
