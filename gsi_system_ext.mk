@@ -30,6 +30,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CarrierConfig
 
+# Add these HIDL services to the GSI. They are optional for devices to add to system_ext
+# for HIDL support, so we add them to the GSI to support those devices that rely on them.
+# These can be removed once we stop supporting upgrades for devices with Android V vendor
+# images because HIDL HALs are not allowed for Android V+.
+PRODUCT_PACKAGES += \
+    hwservicemanager \
+    android.hidl.allocator@1.0-service
+
 # Install a copy of the debug policy to the system_ext partition, and allow
 # init-second-stage to load debug policy from system_ext.
 # This option is only meant to be set by compliance GSI targets.
