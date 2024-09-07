@@ -23,7 +23,6 @@ PRODUCT_PACKAGES += \
     Camera2 \
     Dialer \
     LatinIME \
-    messaging \
 
 # Default AOSP sounds
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AllAudio.mk)
