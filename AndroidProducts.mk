@@ -17,10 +17,8 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/gsi_arm.mk \
     $(LOCAL_DIR)/gsi_arm64.mk \
-    $(LOCAL_DIR)/gsi_arm64_soong_system.mk \
     $(LOCAL_DIR)/gsi_x86.mk \
     $(LOCAL_DIR)/gsi_x86_64.mk \
-    $(LOCAL_DIR)/gsi_x86_64_soong_system.mk \
     $(LOCAL_DIR)/mgsi/csi_arm.mk \
     $(LOCAL_DIR)/mgsi/csi_arm64.mk \
     $(LOCAL_DIR)/mgsi/csi_x86.mk \
