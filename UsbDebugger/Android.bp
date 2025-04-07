@@ -1,0 +1,58 @@
+/*
+ * Copyright 2025 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app {
+    name: "UsbDisableDebugger",
+
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res"],
+    min_sdk_version: "33",
+    target_sdk_version: "33",
+    certificate: "platform",
+    privileged: true,
+    product_specific: true,
+    sdk_version: "current",
+    dex_preopt: {
+        enabled: false,
+    },
+
+    static_libs: [
+        "kotlinx_coroutines_android",
+        "kotlinx_coroutines",
+        "androidx.appcompat_appcompat",
+        "androidx.annotation_annotation",
+        "androidx.activity_activity-compose",
+        "androidx.compose.material_material-icons-core",
+        "androidx.compose.material3_material3",
+        "androidx.lifecycle_lifecycle-common",
+        "androidx.activity_activity-ktx",
+        "com.google.android.material_material",
+    ],
+    manifest: "AndroidManifest.xml",
+    required: ["privapp_whitelist_com.android.usb.testing.debuggertool.datasignal"],
+}
+
+prebuilt_etc {
+    name: "privapp_whitelist_com.android.usb.testing.debuggertool.datasignal",
+    product_specific: true,
+    sub_dir: "permissions",
+    src: "com.android.usb.testing.debuggertool.datasignal.xml",
+    filename_from_src: true,
+}
