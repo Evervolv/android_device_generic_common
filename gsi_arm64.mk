@@ -51,6 +51,12 @@ $(call inherit-product, device/generic/common/gsi_product.mk)
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_release.mk)
 
+#
+# Flag build to add in Usb Debugging Test App
+#
+ifneq ($(filter userdebug,$(TARGET_BUILD_VARIANT)),)
+    $(call soong_config_set_bool, gsi, import_usb_debugging_test_app, true)
+endif
 
 PRODUCT_NAME := gsi_arm64
 PRODUCT_DEVICE := generic_arm64
