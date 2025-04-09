@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     Camera2 \
     Dialer \
     LatinIME \
+    messaging \
     frameworks-base-overlays \
 
 # Default AOSP sounds
